@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    .container
+        a.btn.btn-success(href='/therapies/add' style='float: right; margin-right: 10px') เพิ่มข้อมูล
+        h1 #{title}
+        table.table.table-striped
+            th ชื่อ
+            th เข่า
+            th ความเร็ว
+            th
+                for item in data
+                    tr
+                        td #{item.name}
+                        td #{item.knee}
+                        td #{item.speed}
+                        td
+                            a(href='/therapies/' + item._id) รายละเอียด

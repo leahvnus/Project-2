@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1 #{title}
+        form.form-group(action='/therapies/add', method='post')
+            div.col-6
+                label(for='name') ชื่อ : 
+                input.form-control(type='text', name='name', maxlength='30', placeholder='ชื่อ', required)
+            div.col-6
+                label(for='title') เข่า :
+                input.form-control(type='number', name='knee', min="0", max="100", placeholder='จำนวนรอบ', required)
+            div.col-6
+                label(for="speed") ความเร็ว :
+                input.form-control(type='number', name='speed', min="0", max="100", placeholder='จำนวนรอบ', required)
+                hr
+                button.btn.btn-primary(type='submit') บันทึก
+                button.btn.btn-primary(type='reset') รีเซ็ต

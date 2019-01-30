@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    <h1>#{TherapyData.title}</h1>
+        ul
+            li name : #{TherapyData.name}
+            li knee : #{TherapyData.knee}
+            li speed : #{TherapyData.speed}
+        ul
+            li
+                a(href='/therapies/'+TherapyData._id+'/edit') แก้ไข
+            li
+                form(action='/therapies/deletetherapy/'+TherapyData._id, method='post')
+                    button(type='submit') ลบข้อมูล
